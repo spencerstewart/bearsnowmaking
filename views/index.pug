@@ -1,17 +1,172 @@
 extends layout
 
 block content
-  div.container
-    div.row
-      header.col-md
-        h1 BBMR Snowmaking
-    div.row
-      div.col-md
-        h1 Weather Data
-        p Some great weather data
-      div.col-md
-        h1 Pump Data
-        p Some great weather data
-      div.col-md
-        h1 More Data
-        p Some data #{reading.temperature_1}
+  div.row
+    header.col-md
+      h1 BBMR Snowmaking
+      p Last Updated: #{reading.timestamp}
+  div.row
+    div.col-md
+      h1 Weather & Water Data
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th Mountain Locations
+            th Dry Temp
+            th Humidity
+            th Wet bulb
+        tbody
+          tr
+            td Bear Peak
+            td #{reading.temperature_1}
+            td #{reading.humidity_1}
+            td #{reading.wetbulb_1}
+          tr
+            td Top Chair 9
+            td #{reading.temperature_2}
+            td #{reading.humidity_2}
+            td #{reading.wetbulb_2}
+          tr
+            td Top of Chair 2
+            td #{reading.temperature_3}
+            td #{reading.humidity_3}
+            td #{reading.wetbulb_3}
+          tr
+            td Base Area
+            td #{reading.temperature_4}
+            td #{reading.humidity_4}
+            td #{reading.wetbulb_4}
+          tr
+            td Pumphouse
+            td #{reading.temperature_5}
+            td #{reading.humidity_5}
+            td #{reading.wetbulb_5}
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th Other Locations
+            th Temperature
+        tbody
+          tr
+            td Air Temperature
+            td #{reading.air_temperature}
+          tr
+            td Lake Temperature
+            td #{reading.lake_temperature}
+          tr
+            td Reservoir 1 Temperature
+            td #{reading.reservoir_1_temperature}
+          tr
+            td Reservoir 2 Temperature
+            td #{reading.reservoir_2_temperature}
+          tr
+            td Reservoir 3 Temperature
+            td #{reading.reservoir_3_temperature}
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th Reservoir
+            th Level
+        tbody
+          tr
+            td Reservoir 3
+            td #{reading.reservoir_3_level}
+    div.col-md
+      h1 Pump Data
+      h3 Pump System Data
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th PPH Flow Rate
+            th PPH Hill Pressure
+            th Lake Flow Rate
+            th Lake Hill Pressure
+        tbody
+          tr
+            td #{reading.pph_flow}
+            td #{reading.pph_hill_psi}
+            td #{reading.lake_flow}
+            td #{reading.lake_hill_psi}
+      h3 Primary Pumps
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th Pump
+            th Status
+            th Hours
+            th Amps
+            th MVA
+        tbody
+          tr
+            td Primary Pump #3
+            td Unknown
+            td #{reading.pph_p03_hours}
+            td #{reading.pph_p03_amps}
+            td #{reading.pump_3_mva}
+          tr
+            td Primary Pump #4
+            td Unknown
+            td #{reading.pph_p04_hours}
+            td #{reading.pph_p04_amps}
+            td #{reading.pump_4_mva}
+          tr
+            td Primary Pump #5
+            td Unknown
+            td #{reading.pph_p05_hours}
+            td #{reading.pph_p05_amps}
+            td #{reading.pump_5_mva}
+          tr
+            td Primary Pump #6
+            td Unknown
+            td #{reading.pph_p06_hours}
+            td #{reading.pph_p06_amps}
+            td #{reading.pump_6_mva}
+          tr
+            td Primary Pump #7
+            td Unknown
+            td #{reading.pph_p07_hours}
+            td #{reading.pph_p07_amps}
+            td #{reading.pump_7_mva}
+          tr
+            td Primary Pump #8
+            td Unknown
+            td #{reading.pph_p08_hours}
+            td #{reading.pph_p08_amps}
+            td #{reading.pump_8_mva}
+          tr
+            td Primary Pump #9
+            td Unknown
+            td #{reading.pph_p09_hours}
+            td #{reading.pph_p09_amps}
+            td #{reading.pump_9_mva}
+      h3 Lake Pumps
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th Pump
+            th Status
+            th Hours
+            th Amps
+            th MVA
+        tbody
+          tr
+            td Lake Pump #0
+            td Unknown
+            td #{reading.lake_pump_0_hours}
+            td #{reading.lake_pump_0_amps}
+            td #{reading.pump_0_mva}
+          tr
+            td Lake Pump #1
+            td Unknown
+            td #{reading.lake_pump_1_hours}
+            td #{reading.lake_pump_1_amps}
+            td #{reading.pump_1_mva}
+          tr
+            td Lake Pump #2
+            td Unknown
+            td #{reading.lake_pump_2_hours}
+            td #{reading.lake_pump_2_amps}
+            td #{reading.pump_2_mva}
+    div.col-md
+      h1 Power & Compressor Data
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ut iusto beatae porro eveniet eos maxime repellendus enim eaque labore inventore doloribus deserunt nemo consequuntur voluptas, unde nulla doloremque quasi?

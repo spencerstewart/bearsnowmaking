@@ -4,7 +4,7 @@ var Reading = require('../models/reading');
 exports.index = function(req, res) {
     Reading.findOne({}, {}, {sort: {'_id': -1}}, function(err, reading) {
         if (err) console.log(err.message)
-        res.render('index', {error: err, reading: reading});
+        res.render('index', {title: 'Bear Snowmaking Data', error: err, reading: reading});
     })
 }
 
