@@ -1,5 +1,6 @@
 var Reading = require('../models/reading');
 
+
 // Get Index
 exports.index = function(req, res) {
     Reading.findOne({}, {}, {sort: {'_id': -1}}, function(err, reading) {
@@ -9,6 +10,7 @@ exports.index = function(req, res) {
 }
 
 exports.add_reading = function(req, res) {
+
     console.log('receiving a post request');
     console.log(req.body);
     let reading = new Reading(req.body);
