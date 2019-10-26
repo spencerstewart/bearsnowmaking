@@ -7,11 +7,15 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// Bring in environmental variables
+const dotenv = require('dotenv');
+dotenv.config();
+
 var app = express();
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://127.0.0.1/snowmaking';
+var mongoDB = process.env.MONGODB_CONNECTION;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

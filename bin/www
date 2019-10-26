@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+// Bring in environmental variables
+const dotenv = require('dotenv');
+dotenv.config();
+
 /**
  * Module dependencies.
  */
