@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
+var helmet = require('helmet');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -13,6 +14,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 var app = express();
+
+// Protect against vulnerabilities
+app.use(helmet());
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
