@@ -11,6 +11,14 @@ dotenv.config();
 var app = require('../app');
 var debug = require('debug')('bearsnowmaking:server');
 var http = require('http');
+var https = require('https');
+var fs = require('fs');
+
+var options = {
+  key: fs.readFileSync(process.env.HTTPS_KEY),
+  cert: fs.readFileSync(process.env.HTTPS_CERT)
+};
+https.createServer(options, app).listen(443);
 
 /**
  * Get port from environment and store in Express.
