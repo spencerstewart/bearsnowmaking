@@ -8,6 +8,7 @@ var helmet = require('helmet');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api');
 
 // Bring in environmental variables
 const dotenv = require('dotenv');
@@ -40,6 +41,7 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
+app.use('/api', apiRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
