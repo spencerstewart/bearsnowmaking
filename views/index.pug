@@ -169,4 +169,40 @@ block content
             td #{reading.pump_2_mva}
     div.col-md
       h1 Power & Compressor Data
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ut iusto beatae porro eveniet eos maxime repellendus enim eaque labore inventore doloribus deserunt nemo consequuntur voluptas, unde nulla doloremque quasi?
+      h3 Power Total
+      table.table.table-striped
+        thead.thead-dark
+            tr
+              th Power Total
+              th KWH
+              th VA
+              th VAR
+              th Power Factor
+        tbody
+          tr
+            td Power Total
+            td #{reading.power_totalkwh}
+            td #{reading.power_totalva}
+            td #{reading.power_totalvar}
+            td #{reading.power_totalpowerfactor}
+      h3 Power Circuits
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th Circuit
+            th Voltage
+            th Current
+        tbody
+          tr
+            td Circuit A
+            td #{reading.power_voltagea}
+            td #{reading.power_currenta}
+          tr
+            td Circuit B
+            td #{reading.power_voltageb}
+            td #{reading.power_currentb}
+          tr
+            td Circuit C
+            td #{reading.power_voltagec}
+            td #{reading.power_currentc}
+
